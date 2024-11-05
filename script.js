@@ -15,7 +15,7 @@ showbtnElm.addEventListener("click",()=>{
     const bench=parseFloat(document.getElementById("bench").value);
     const squat=parseFloat(document.getElementById("squat").value);
     const deadlift=parseFloat(document.getElementById("deadlift").value);
-    if(weight<=0){
+    if(weight<=0||isNaN(weight)||weight===null||weight===undefined){
         return alert("体重が入力されていないか正常な数値ではありません");
     }
     const benchLevel=benchWeigh(weight,bench);
@@ -49,13 +49,13 @@ function benchWeigh(weight,bench){
         return 0;
     }
     const power=bench/weight;
-    if(power<0.5){
+    if(power<0.75){
         return "超初心者";
-    }else if(power<0.75){
-        return "初心者";
     }else if(power<1.25){
-        return "中級者";
+        return "初心者";
     }else if(power<1.75){
+        return "中級者";
+    }else if(power<2){
         return "上級者";
     }else{
         return "エリート";
@@ -66,13 +66,13 @@ function squatWeigh(weight,squat){
         return 0;
     }
     const power=squat/weight;
-    if(power<0.75){
+    if(power<1.25){
         return "超初心者";
-    }else if(power<1.25){
-        return "初心者";
     }else if(power<1.5){
-        return "中級者";
+        return "初心者";
     }else if(power<2.25){
+        return "中級者";
+    }else if(power<2.75){
         return "上級者";
     }else{
         return "エリート";
@@ -83,13 +83,13 @@ function deadliftWeigh(weight,deadlift){
         return 0;
     }
     const power=deadlift/weight;
-    if(power<1){
+    if(power<1.5){
         return "超初心者";
-    }else if(power<1.5){
-        return "初心者";
     }else if(power<2){
-        return "中級者";
+        return "初心者";
     }else if(power<2.5){
+        return "中級者";
+    }else if(power<3){
         return "上級者";
     }else{
         return "エリート";
