@@ -16,38 +16,59 @@
     <main class="align-items-center" style="margin:20px 0px">
         <div class="container input">
             <div class="row">
-              <div class="col text-center">
-                体　重：<input type="number" min="1" max="200" value="60" name="weight" id="weight" style="width:50px"> kg
+              <div class="col-lg-3 col-md-6 text-center mb-4">
+                <div class="row">
+                  <div class="col-6 text-end">体重：</div>
+                  <div class="col-4"><input type="number" min="30" max="200" value="60" name="weight" id="weight" style="width:50px"></div>
+                  <div class="col-2 text-start">kg</div>
+                </div>
+                 
               </div>
-              <div class="col text-center">
-                ベンチプレス：<input type="number" min="1" max="200" value="60" name="bench" id="bench" style="width:50px">kg
+              <div class="col-lg-3 col-md-6 text-center mb-4">
+                <div class="row">
+                  <div class="col-6 text-end">ベンチプレス：</div>
+                  <div class="col-4"><input type="number" min="1" max="500" value="60" name="bench" id="bench" style="width:50px"></div>
+                  <div class="col-2 text-start">kg</div>
+                </div>
               </div>
-              <div class="col text-center">
-                スクワット：<input type="number" min="1" max="200" value="60" name="squat" id="squat" style="width:50px">kg
+              <div class="col-lg-3 col-md-6 text-center mb-4">
+                <div class="row">
+                  <div class="col-6 text-end">スクワット：</div>
+                  <div class="col-4"><input type="number" min="1" max="500" value="60" name="squat" id="squat" style="width:50px"></div>
+                  <div class="col-2 text-start">kg</div>
+                </div>
+                
               </div>
-              <div class="col text-center">
-                デッドリフト：<input type="number" min="1" max="200" value="100" name="deadlift" id="deadlift" style="width:50px">kg
+              <div class="col-lg-3 col-md-6 text-center mb-4">
+                <div class="row">
+                  <div class="col-6 text-end">デッドリフト：</div>
+                  <div class="col-4"><input type="number" min="1" max="500" value="100" name="deadlift" id="deadlift" style="width:50px"></div>
+                  <div class="col-2 text-start">kg</div>
+                </div>
+                
               </div>
             </div>
         </div>
         <div class="text-center" style="margin: 30px 0px;"><button class="btn btn-dark" id="showbtn">結果を見る</button></div>
-        <div class="container result " style="padding:30px;" id="result">
-            <div class="row d-flex align-items-center">
-                <div class="col-4 text-center align-items-center" id="benchLavel"></div>
-                <div class="col-8 text-center display-1 font-weight-bold" id="benchresult"></div>
+        <!--ここから最初は表示されずボタンを押したら表示  -->
+        <div class="container result  mb-4" id="result">
+            <div class="row d-flex align-items-center bg-danger bg-opacity-50 mb-1 rounded">
+                <div class="col-6 text-center align-items-center fs-3" id="benchLavel"></div>
+                <div class="col-6 text-center display-1 font-bold" id="benchresult"></div>
             </div>
-            <div class="row d-flex align-items-center">
-                <div class="col-4 text-center align-items-center" id="squatLavel"></div>
-                <div class="col-8 text-center display-1 font-weight-bold" id="squatresult"></div>
+            <div class="row d-flex align-items-center bg-danger bg-opacity-50 mb-1 rounded">
+                <div class="col-6 text-center align-items-center fs-3" id="squatLavel"></div>
+                <div class="col-6 text-center display-1 font-bold" id="squatresult"></div>
             </div>
-            <div class="row d-flex align-items-center">
-                <div class="col-4 text-center align-items-center" id="deadliftLavel"></div>
-                <div class="col-8 text-center display-1 font-weight-bold" id="deadliftresult"></div>
+            <div class="row d-flex align-items-center bg-danger bg-opacity-50 mb-1 rounded">
+                <div class="col-6 text-center align-items-center fs-3" id="deadliftLavel"></div>
+                <div class="col-6 text-center display-1 font-bold" id="deadliftresult"></div>
             </div>
         </div>
+        <!-- ここまで -->
         <div class="container">
           <div class="row">
-            <div class="col-md-6 mb-4 d-flex flex-column align-items-center">
+            <div class="col-md-4 mb-4 d-flex flex-column align-items-center">
               <h3>ベンチプレス</h3>
               <table class="text-center table-bordered">
                 <tr class="bg-danger">
@@ -70,31 +91,68 @@
                   <td>上級者</td>
                   <td>1.25～1.75倍</td>
                 </tr>
+                <tr>
+                  <td>エリート</td>
+                  <td>1.75倍～</td>
+                </tr>
               </table>
             </div>
 
-            <div class="col-md-6 mb-4 d-flex flex-column align-items-center">
-              <h3>スクワット・デッドリフト</h3>
+            <div class="col-md-4 mb-4 d-flex flex-column align-items-center">
+              <h3>スクワット</h3>
               <table class="text-center table-bordered">
                 <tr class="bg-danger">
                   <th>レベル</th>
                   <th>体重×何倍の重量か</th>
                 </tr>
                 <tr>
-                  <td>超初心者</td>
-                  <td>～0.5倍</td>
+                  <td>　超初心者　</td>
+                  <td>～0.75倍</td>
                 </tr>
                 <tr>
                   <td>初心者</td>
-                  <td>0.5～0.75倍</td>
-                </tr>
-                <tr>
-                  <td>中級者</td>
                   <td>0.75～1.25倍</td>
                 </tr>
                 <tr>
+                  <td>中級者</td>
+                  <td>1.25～1.5倍</td>
+                </tr>
+                <tr>
                   <td>上級者</td>
-                  <td>1.25～1.75倍</td>
+                  <td>1.5～2.25倍</td>
+                </tr>
+                <tr>
+                  <td>エリート</td>
+                  <td>2.25倍～</td>
+                </tr>
+              </table>
+            </div>
+            <div class="col-md-4 mb-4 d-flex flex-column align-items-center">
+              <h3>デッドリフト</h3>
+              <table class="text-center table-bordered">
+                <tr class="bg-danger">
+                  <th>レベル</th>
+                  <th>体重×何倍の重量か</th>
+                </tr>
+                <tr>
+                  <td>　超初心者　</td>
+                  <td>～1倍</td>
+                </tr>
+                <tr>
+                  <td>初心者</td>
+                  <td>1～1.5倍</td>
+                </tr>
+                <tr>
+                  <td>中級者</td>
+                  <td>1.5～2倍</td>
+                </tr>
+                <tr>
+                  <td>上級者</td>
+                  <td>2～2.5倍</td>
+                </tr>
+                <tr>
+                  <td>エリート</td>
+                  <td>2.5倍～</td>
                 </tr>
               </table>
             </div>
