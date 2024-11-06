@@ -50,9 +50,9 @@ function benchWeigh(weight,bench){
     }
     const power=bench/weight;
     if(power<0.75){
-        return "超初心者";
-    }else if(power<1.25){
         return "初心者";
+    }else if(power<1.25){
+        return "初級者";
     }else if(power<1.75){
         return "中級者";
     }else if(power<2){
@@ -67,9 +67,9 @@ function squatWeigh(weight,squat){
     }
     const power=squat/weight;
     if(power<1.25){
-        return "超初心者";
-    }else if(power<1.5){
         return "初心者";
+    }else if(power<1.5){
+        return "初級者";
     }else if(power<2.25){
         return "中級者";
     }else if(power<2.75){
@@ -84,9 +84,9 @@ function deadliftWeigh(weight,deadlift){
     }
     const power=deadlift/weight;
     if(power<1.5){
-        return "超初心者";
-    }else if(power<2){
         return "初心者";
+    }else if(power<2){
+        return "初級者";
     }else if(power<2.5){
         return "中級者";
     }else if(power<3){
